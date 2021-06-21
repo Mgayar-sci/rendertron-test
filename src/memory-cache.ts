@@ -38,7 +38,7 @@ export class MemoryCache {
     this.store.clear();
   }
 
-  cacheContent(key: string, headers: { [key: string]: string }, payload: Buffer) {
+  cacheContent(key: string, headers: { [key: string]: string } | {}, payload: any) {
     // if the cache gets too big, we evict the least recently used entry (i.e. the first value in the map)
     if (this.store.size >= parseInt(this.config.cacheConfig.cacheMaxEntries) && parseInt(this.config.cacheConfig.cacheMaxEntries) !== -1) {
       const keyToDelete = this.store.keys().next().value;

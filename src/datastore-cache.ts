@@ -52,7 +52,7 @@ export class DatastoreCache {
     // delete.
   }
 
-  async cacheContent(key: DatastoreKey, headers: {}, payload: Buffer) {
+  async cacheContent(key: DatastoreKey, headers: {}, payload: any) {
     const now = new Date();
     // query datastore to see if we are over the max number of allowed entries, and max entries isn't disabled with a value of -1 and remove over quota, removes oldest first
     if (parseInt(this.config.cacheConfig.cacheMaxEntries) !== -1) {
