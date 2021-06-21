@@ -14,7 +14,7 @@
  * the License.
  */
 
-import { test } from 'ava';
+import test from 'ava';
 import * as Koa from 'koa';
 import * as koaStatic from 'koa-static';
 import * as path from 'path';

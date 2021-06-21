@@ -143,7 +143,7 @@ export function makeMiddleware(options: Options): express.Handler {
     if (injectShadyDom) {
       renderUrl += '?wc-inject-shadydom=true';
     }
-    request({ url: renderUrl, timeout }, (e) => {
+    request({ url: renderUrl, timeout }, (e: any) => {
       if (e) {
         console.error(
           `[rendertron middleware] ${e.code} error fetching ${renderUrl}`);
